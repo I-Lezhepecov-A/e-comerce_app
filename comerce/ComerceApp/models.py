@@ -1,4 +1,5 @@
 from django.db import models
 
-class Search(moldels.Model):
-    search=models.CharField(max_length=200)
+class Search(models.Model):
+    search=models.CharField(max_length=500)
+    created=models.DateTimeField(auto_now=True)
