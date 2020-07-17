@@ -1,12 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+   <h1 style="text-align: center"> {{ search | title }} </h1>
+    <div class="row">
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+                <a href="/"><img src="https://img2.akspic.ru/image/44469-starovozrastnye_lesa-tropicheskij_les-lesistaya_mestnost-ekosistema-prirodnyj_zapovednik-7680x4320.jpg" alt=""></a>
+            </div>
+            <div class="card-content">
+              <p>TEST</p>
+            </div>
+            <div class="card-action">
+              <a href="/">TEST price</a>
+            </div>
+          </div>
+        </div>
     
-</body>
-</html>
+    <h1 style="text-align: center"> {{ search | title }} </h1>
+    <div class="row">
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+                <a href="/"><img src="https://img2.akspic.ru/image/98003-lesistaya_mestnost-hvojnymi_lesami-roshha-priroda-zakat-7680x4320.jpg" alt=""></a>
+            </div>
+            <div class="card-content">
+              <p>TEST</p>
+            </div>
+            <div class="card-action">
+              <a href="/">TEST price</a>
+            </div>
+          </div>
+        </div>
+    
+    <h1 style="text-align: center"> {{ search | title }} </h1>
+    <div class="row">
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+                <a href="/"><img src="https://img1.akspic.ru/image/87509-orientir-nebo-trek-priroda-gonkong-7680x4320.jpg" alt=""></a>
+            </div>
+            <div class="card-content">
+              <p>TEST</p>
+            </div>
+            <div class="card-action">
+              <a href="/">TEST price</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
