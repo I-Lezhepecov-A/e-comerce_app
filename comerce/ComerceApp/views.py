@@ -26,10 +26,17 @@ def new_search(request):
     for post in post_block:
         post_title = post.find(class_='k-eoGq-d16af').text  
         post_url = post.get('href')
-        post_price = post.find(class_='k-ejrZ-a3c0f').text  
+        post_price = post.find(class_='k-ejrZ-a3c0f').text
+
+        # if post.find(class_='k-ejrZ-a3c0f'):
+        #     post_price = post.find(class_='k-ejrZ-a3c0f').text
+        # elif (post.find(class_='k-ejrZ-a3c0f').text == "Договорная"):
+        #     post_price = "На капоте"
+            
+
     
         final_postings.append((post_title, post_url, post_price))
-        # print(post_block)
+
     
     stuff_for_frontend = {
         'search' : search,

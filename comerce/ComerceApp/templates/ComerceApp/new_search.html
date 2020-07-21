@@ -1,55 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-{% for post in final_postings %}
-    <p>{{ post.0 }}</p>
-    <p>{{ post.1 }}</p>
-    <p>{{ post.2 }}</p>
-{% endfor %}
-
 <div class="row">
-    <h2 style="text-align: center">{{ search | title }}</h2>
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <a href="/"><img src="https://img2.akspic.ru/image/44469-starovozrastnye_lesa-tropicheskij_les-lesistaya_mestnost-ekosistema-prirodnyj_zapovednik-7680x4320.jpg" alt=""></a>
-            </div>
-            <div class="card-content">
-                <p>TEST</p>
-            </div>
-            <div class="card-action">
-                <a href="/">TEST price</a>
+    {% for post in final_postings %}
+        {% comment %} <p>{{ post.0 }}</p>
+        <p>{{ post.1 }}</p>
+        <p>{{ post.2 }}</p> {% endcomment %}
+        <div class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <a href="{{ post.1 }}"><img src="https://img2.akspic.ru/image/98003-lesistaya_mestnost-hvojnymi_lesami-roshha-priroda-zakat-7680x4320.jpg" alt=""></a>
+                </div>
+                <div class="card-content">
+                    <p>{{ post.0 }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ post.1 }}">{{ post.2 }}</a>
+                </div>
             </div>
         </div>
-        </div>
+    {% endfor %}
+</div>    
 
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <a href="/"><img src="https://img2.akspic.ru/image/98003-lesistaya_mestnost-hvojnymi_lesami-roshha-priroda-zakat-7680x4320.jpg" alt=""></a>
-            </div>
-            <div class="card-content">
-                <p>TEST</p>
-            </div>
-            <div class="card-action">
-                <a href="/">TEST price</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <a href="/"><img src="https://img1.akspic.ru/image/87509-orientir-nebo-trek-priroda-gonkong-7680x4320.jpg" alt=""></a>
-            </div>
-            <div class="card-content">
-                <p>TEST</p>
-            </div>
-            <div class="card-action">
-                <a href="/">TEST price</a>
-            </div>
-        </div>
-    </div>   
-</div>
 {% endblock content %}
