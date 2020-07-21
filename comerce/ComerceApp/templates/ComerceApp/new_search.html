@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% for post in final_postings %}
+    <p>{{ post.0 }}</p>
+    <p>{{ post.1 }}</p>
+    <p>{{ post.2 }}</p>
+{% endfor %}
+
 <div class="row">
-    <h1 style="text-align: center"> {{ search | title }} </h1>
+    <h2 style="text-align: center">{{ search | title }}</h2>
     <div class="col s4">
         <div class="card">
             <div class="card-image">
