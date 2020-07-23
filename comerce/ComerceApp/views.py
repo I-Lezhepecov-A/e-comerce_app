@@ -5,8 +5,7 @@ from bs4 import BeautifulSoup
 from . import models
 
 KUFAR_BASE_URL= 'https://www.kufar.by/listings?query={}&ot=1&rgn=&ar='
-# EBAY_BASE_URL= 'ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR12.TRC2.A0.H0.X{}.TRS0&_nkw=buds+plus&_sacat=0'
-# CRAIGLIST_BASE_URL='https://chicago.craigslist.org/search/sss?query={}&sort=rel'
+KUFAR_BASE_IMG_URL= 'https://yams.kufar.by/api/v1/kufar-ads/images/{}.jpg?rule=line_thumbs'
 
 def home_page(request):
     return render(request, template_name='base.html')
@@ -27,6 +26,7 @@ def new_search(request):
         post_title = post.find(class_='k-eoGq-d16af').text  
         post_url = post.get('href')
         post_price = post.find(class_='k-ejrZ-a3c0f').text
+        post_img = post.find(class_='k-eoGQ-a6fd3').get('data-src')
 
         # if post.find(class_='k-ejrZ-a3c0f'):
         #     post_price = post.find(class_='k-ejrZ-a3c0f').text
@@ -35,7 +35,8 @@ def new_search(request):
             
 
     
-        final_postings.append((post_title, post_url, post_price))
+        final_postings.append((post_title, post_url, post_price, post_img))
+        print()
 
     
     stuff_for_frontend = {
